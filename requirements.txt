@@ -1,2 +1,5 @@
-fastapi==0.115.0
-uvicorn[standard]==0.30.0
+# NEW (Fixed versions)
+fastapi>=0.116.0  # Upgrade FastAPI to a version compatible with Starlette >= 0.40.0
+uvicorn[standard]>=0.30.0 # Keep this up-to-date or un-pinned for compatibility
+# starlette line can now be removed, or just updated, as FastAPI will pull the correct version
+starlette>=0.40.0
