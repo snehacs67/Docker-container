@@ -1,8 +1,8 @@
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-extend-select = ["E", "F", "I"]  # pycodestyle, pyflakes, import sorting
-extend-ignore = ["E501"]         # ignore long lines for now
+lint.extend-select = ["E", "F", "I"]  # pycodestyle, pyflakes, import sorting
+lint.extend-ignore = ["E501"]         # ignore long lines for now
 
 [tool.ruff.format]
 quote-style = "double"

@@ -5,8 +5,13 @@ from fastapi import FastAPI, Query
 
 app = FastAPI(title="Time API", version="1.0.0")
 
+
 @app.get("/time")
-def get_time(timezone: str | None = Query(default=None, description="IANA timezone, e.g. 'Europe/Stockholm'")):
+def get_time(
+    timezone: str | None = Query(
+        default=None, description="IANA timezone, e.g. 'Europe/Stockholm'"
+    ),
+):
     """
     Returns current time in ISO 8601.
     If 'timezone' is provided, returns both UTC and localized time.
@@ -19,5 +24,8 @@ def get_time(timezone: str | None = Query(default=None, description="IANA timezo
             now_local = datetime.now(tz).isoformat(timespec="seconds")
             return {"utc": now_utc, "timezone": timezone, "local": now_local}
         except Exception:
-            return {"utc": now_utc, "error": f"Invalid timezone '{timezone}'. Use an IANA timezone like 'Europe/Stockholm'."}
+            return {
+                "utc": now_utc,
+                "error": f"Invalid timezone '{timezone}'. Use an IANA timezone like 'Europe/Stockholm'.",
+            }
     return {"utc": now_utc}
