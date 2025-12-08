@@ -41,7 +41,7 @@ jobs:
           fetch-depth: 0  # let TruffleHog traverse history
 
       - name: Run TruffleHog (fail on verified findings)
-        uses: trufflesecurity/trufflehog@v3
+        uses: trufflesecurity/trufflehog@v2
         with:
           path: .
           extra_args: "--fail --no-update"
