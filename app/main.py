@@ -1,6 +1,7 @@
-from fastapi import FastAPI, Query
-from datetime import datetime
 import zoneinfo
+from datetime import datetime
+
+from fastapi import FastAPI, Query
 
 app = FastAPI(title="Time API", version="1.0.0")
 
